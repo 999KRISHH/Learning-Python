@@ -6,8 +6,15 @@ import hangman_art
 import movies
 
 #TODO-1: - Update the word list to use the 'word_list' from hangman_words.py
-word_list = (movies.movies)
-word = random.choice(word_list)
+if type == 1:
+    word_list = (movies.bollywood_movies)
+    word = random.choice(word_list)
+elif type == 2:
+    word_list = (movies.hollywood_movies)
+    word = random.choice(word_list)
+else:
+    word_list = (movies.movies)
+    word = random.choice(word_list)
 chosen_word = word.lower()
 word_length = len(chosen_word)
 
@@ -16,6 +23,9 @@ lives = 6
 
 #TODO-3: - Import the logo from hangman_art.py and print it at the start of the game.
 print(hangman_art.logo)
+type = input(
+    "Welcome to Hangman!\nType '1' for Bollywood or Type '2' for Hollywood or just press 'Enter' for a mix of  both Bollywood and Hollywood: "
+)
 #Testing code
 # print(f'Pssst, the solution is {chosen_word}.')
 
